@@ -8,7 +8,7 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="./resources/css/bootstrap.min.css" rel="stylesheet"><!-- cdn이 아닌 로컬에 저장된 css  -->
+<link href="./resources/css/bootstrap.min.css" rel="stylesheet"/><!-- cdn이 아닌 로컬에 저장된 css  -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
 
 

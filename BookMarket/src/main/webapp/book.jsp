@@ -8,7 +8,7 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="./resources/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
 
 <title>♡♥♡ 도서정보 ♡♥♡ </title></head>
