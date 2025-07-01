@@ -33,7 +33,8 @@
 	<div class = "row align-items-md-stretch ">
 	<div class = "text-end">
 		<a href = "?language=ko">Korean&nbsp;</a>|<a href="?language=en">&nbsp;English</a>
-	</div>
+		<a href = "logout.jsp" class="btn btn-sm btn-success pull right">logout</a>
+		</div>
 		<form name="newBook" action ="./processAddBook.jsp" method="post" 
 		enctype="multipart/form-data">
 

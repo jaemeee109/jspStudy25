@@ -14,11 +14,7 @@
 	<!-- 상단 : 메뉴영역  -->
 	<div class = "container py-4">
 		<%@ include file = "menu.jsp" %>
-		<%! String greeting = "도서 쇼핑몰에 오신 것을 환영합니다";
-			String tagline="Welcome to Web Market";%>
-		
-	
-	
+
 	<!-- 중간 타이틀 영역  -->
 
 	
@@ -38,8 +34,26 @@
 			
 			<%
 				String error = request.getParameter("error");
-			
+				if (error!=null){
+					out.println("<div class='alert alert-danger'>");
+					out.println("아이디와 비밀번호를 확인해 주세요");
+					out.println("</div>");
+				}
 			%>
+			<form class="form-signin" action="j_security_check" method="post">
+			<div class="form-floating mb-3 row">
+				<input type ="text" class="form-control" name='j_username' required autofocus>
+				<label for="floatingInput">ID</label>
+			</div>
+			
+			<div class="form-floating mb-3 row">
+				<input type ="password" class="form-control" name='j_password'>
+				<label for="floatingInput">Password</label>
+			</div>
+			
+			<button class="btn btn-lg btn-success" type ="submit"> 로그인 </button>
+			
+		</form>
 			</div>
 		</div>
 	</div>

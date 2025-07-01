@@ -5,26 +5,32 @@
 		<description></description>
 		<role-name>admin</role-name>
 	</security-role>
-	<security-constriant>
-		<dispaly-name>BookMarket Security</dispaly-name>
+	<security-constraint>
+		<display-name>BookMarket Security</display-name>
 		<web-resource-collection>
 			<web-resource-name>BookMarket</web-resource-name>
 			<description></description>
-			<url-pattern>addBook.jsp</url-pattern>
+			<url-pattern>/addBook.jsp</url-pattern>
 		</web-resource-collection>
 		<auth-constraint>
 			<description>권한 관리자명</description>
 			<role-name>admin</role-name>
 		</auth-constraint>
-	</security-constriant>
+	</security-constraint>
 	
 	<login-config>
 		<auth-method>FORM</auth-method>
 		<form-login-config>
-			<form-login-page>login.jsp</form-login-page>
-			<form-error-page>login_failed.jsp</form-error-page>
+			<form-login-page>/login.jsp</form-login-page>
+			<form-error-page>/login_failed.jsp</form-error-page>
 		</form-login-config>
 	</login-config>
+	
+	<!-- p.405 추가  -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/exceptionNoPage.jsp</location>
+	</error-page>
 
 
   <display-name>BookMarket</display-name>
@@ -36,4 +42,8 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  
+  
+  
+  
 </web-app>
