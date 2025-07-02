@@ -7,11 +7,15 @@
 	</security-role>
 	<security-constraint>
 		<display-name>BookMarket Security</display-name>
-		<web-resource-collection>
-			<web-resource-name>BookMarket</web-resource-name>
-			<description></description>
-			<url-pattern>/addBook.jsp</url-pattern>
-		</web-resource-collection>
+	
+	
+	<web-resource-collection><!--p.585 추가  -->
+		<web-resource-name>BookMarket</web-resource-name>
+		<description></description>
+		<url-pattern>/addBook.jsp</url-pattern>
+		<url-pattern>/editBook.jsp</url-pattern>
+	</web-resource-collection> 
+	
 		<auth-constraint>
 			<description>권한 관리자명</description>
 			<role-name>admin</role-name>
@@ -31,6 +35,32 @@
 		<error-code>404</error-code>
 		<location>/exceptionNoPage.jsp</location>
 	</error-page>
+	
+	<!-- p.437 추가  -->
+	<filter>
+		<filter-name>LogFilter</filter-name>
+		<filter-class>filter.LogFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LogFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- p.441 추가  -->
+	<filter>
+		<filter-name>LogFileFilter</filter-name>
+		<filter-class>filter.LogFileFilter</filter-class>
+			<init-param>
+				<param-name>filename</param-name>
+				<param-value>c:\\logs\\bookmarket.log</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>LogFileFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
 
 
   <display-name>BookMarket</display-name>

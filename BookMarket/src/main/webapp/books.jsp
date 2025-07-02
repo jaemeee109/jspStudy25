@@ -3,6 +3,7 @@
 <%@ page import ="java.util.ArrayList" %>
 <%@ page import= "dto.Book" %>
 <%@ page import = "dao.BookRepository" %>
+<%@ page import = "java.sql.*" %>
 <!DOCTYPE html><html><head><meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,42 +27,44 @@
 		</div>
 	</div>
 		
-		<%
-			BookRepository dao = BookRepository.getInstance();
-			ArrayList<Book> listOfBooks= dao.getAllBooks();
-			/* 테스트용 코드
-			System.out.println(listOfBooks.get(0));
-			System.out.println(listOfBooks.get(1));
-			System.out.println(listOfBooks.get(2));
-			System.out.println(listOfBooks.get(3)); */
-			
-			
-		%>
+		<%@ include file ="dbconn.jsp" %>
 		
 		<div class="row align-items-md-stretch text-center">
 		
 		<%
-			for (int i = 0; i < listOfBooks.size(); i++) {
-				Book book = listOfBooks.get(i);
-		
+		    PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			
+			String sql = "select * from book";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+			
 		%>
 			
 				<div class="col-md-4">
 					<div class="h-100 p-2">
-						<img src="./resources/images/<%= book.getFilename()%>" style="width:200px; height:300px"/>
+						
 
-							<h5><b><%= book.getName()%></b></h5>
-							<p><%=book.getAuthor() %></p>
-							<br><%=book.getPublisher() %>|<%=book.getReleaseDate() %>
-							<p><%=book.getDescription().substring(0,100) %>...</p>
-							<p><%=book.getUnitPrice() %>원</p>
-							<p><a href="./book.jsp?id=<%=book.getBookId() %>"
-								class ="btn btn-secondary" role="button">상세정보 &raquo;></a>
+							<h5><b><%=rs.getString("b_name")%></b></h5>
+							<p><%=rs.getString("b_author")%>
+							<br> <%=rs.getString("b_publisher")%> | <%=rs.getString("b_unitPrice")%>원
+							<p> <%=rs.getString("b_description").substring(0,60)%>....
+							<p><%=rs.getString("b_unitPrice")%>원
+							<p><a href="./book.jsp?id=<%=rs.getString("b_id")%>" class="btn btn-secondary" role="button"> 상세 정보 &raquo;</a>
 					</div>
 				</div>
 		<%
 			} // for종료
+			
+			if (rs != null)
+				rs.close();
+			if (pstmt != null)
+				pstmt.close();
+			if (conn != null)
+				conn.close();
 		%>
+		</div>
 			
 	
 	<!-- 바닥글 영역 -->

@@ -19,8 +19,12 @@ public class Book implements Serializable{
 	private String releaseDate; // 출판일
 	private String condition; // 신제품 or 구제품 or 리퍼브제품
 	private String filename; // 이미지 파일명 
+	private int quantity; // 장바구니에 담은 개수
 	
 	
+	
+
+
 	
 
 
@@ -105,6 +109,13 @@ public class Book implements Serializable{
 	public String getReleaseDate() {
 		return releaseDate;
 	}
+	
+	public int getQuantity() {
+		return quantity;
+	}
+
+
+
 
 	public void setReleaseDate(String releaseDate) {
 		this.releaseDate = releaseDate;
@@ -127,13 +138,16 @@ public class Book implements Serializable{
 		this.filename = filename;
 	}
 
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 
 	@Override
 	public String toString() {
 		return "Book [bookId=" + bookId + ", name=" + name + ", unitPrice=" + unitPrice + ", author=" + author
 				+ ", description=" + description + ", publisher=" + publisher + ", category=" + category
 				+ ", unitInStock=" + unitInStock + ", releaseDate=" + releaseDate + ", condition=" + condition
-				+ ", filename=" + filename + "]";
+				+ ", filename=" + filename + ", quantity=" + quantity + "]";
 	}
 
 
