@@ -53,7 +53,7 @@
 		
 		<div class="col-md-4">
        		<div class="h-100 p-2 round-3">		
-       		    <img src="./resources/images/<%=rs.getString("b_filename")%>" style="width: 250; height:350" />	
+       		    <img src="./resources/images/<%=rs.getString("b_filename")%>" style="width: 200px; height:300px" />	
 				<p><h5><b><%=rs.getString("b_name")%></b></h5>
 				<p><%=rs.getString("b_author")%>
 				<br> <%=rs.getString("b_publisher")%> | <%=rs.getString("b_unitPrice")%>원

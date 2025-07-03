@@ -1,0 +1,10 @@
+--CREATE TABLE cart (
+--c_id varchar(10) not null,
+--id varchar(10) not null
+--FOREIGN KEY 'c_id' REFERENCES 'concert' ('c_id'),
+--FOREIGN KEY 'id' REFERENCES 'member'('id'),
+--))default CHARSET=utf8;
+--
+--select*from cart;
+--desc cart;
+--drop table cart;

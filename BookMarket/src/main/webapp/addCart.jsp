@@ -1,68 +1,53 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ page import ="java.util.ArrayList"%>
-<%@ page import ="dto.Book"%>
-<%@ page import ="dao.BookRepository"%>
-<!DOCTYPE html><html><meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel ="stylesheet" href ="./resources/css/bootstrap.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
-
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="dto.Book"%>
+<%@ page import="dao.BookRepository"%>
+<%@ include file="dbconn.jsp" %>
 <%
 	String id = request.getParameter("id");
-	if (id==null || id.trim().equals("")){
+	if (id == null || id.trim().equals("")) {
 		response.sendRedirect("books.jsp");
 		return;
 	}
+
+	BookRepository dao = BookRepository.getInstance(); 
 	
-	BookRepository dao = BookRepository.getInstance();
+	Book book= dao.getBookById(id); // 전달온 파라미터 값으로 객체를 찾아옴.
 	
-	Book book = dao.getBookById(id);
-	if (book==null){
+	if (book== null) {
 		response.sendRedirect("exceptionNoBookId.jsp");
-		
 	}
-	
-	ArrayList<Book> goodsList= dao.getAllBooks();
+
+	ArrayList<Book> goodsList = dao.getAllBooks();
 	Book goods = new Book();
-	for (int i = 0; i<goodsList.size(); i++){
-		goods=goodsList.get(i);
-		if (goods.getBookId().equals(id)){
+	for (int i = 0; i < goodsList.size(); i++) {
+		goods = goodsList.get(i);
+		if (goods.getBookId().equals(id)) { 			
 			break;
 		}
 	}
 	
-	ArrayList<Book> list = (ArrayList<Book>)session.getAttribute("cartlist");
-	
-		if (list==null) {
-			list= new ArrayList<Book>();
-			session.setAttribute("cartlist", list);
-		}
-		
-	
-	int cnt=0;
+	ArrayList<Book> list = (ArrayList<Book>) session.getAttribute("cartlist");
+	if (list == null) { 
+		list = new ArrayList<Book>();
+		session.setAttribute("cartlist", list);
+	}
+
+	int cnt = 0;
 	Book goodsQnt = new Book();
-	
-	for (int i = 0; i<list.size(); i++){
+	for (int i = 0; i < list.size(); i++) {
 		goodsQnt = list.get(i);
-		if (goodsQnt.getBookId().equals(id)){
+		if (goodsQnt.getBookId().equals(id)) {
 			cnt++;
-			int orderQuantity = goodsQnt.getQuantity()+1;
+			int orderQuantity = goodsQnt.getQuantity() + 1;
 			goodsQnt.setQuantity(orderQuantity);
 		}
-			
-		}
-	
-	if (cnt==0){
+	}
+
+	if (cnt == 0) { 
 		goods.setQuantity(1);
 		list.add(goods);
 	}
-	
-	
-	response.sendRedirect("book.jsp?id=" + id );
+
+	response.sendRedirect("book.jsp?id=" + id);
 %>
-
-
-
-</html>

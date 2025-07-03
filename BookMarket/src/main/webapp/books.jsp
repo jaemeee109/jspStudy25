@@ -1,14 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import ="java.util.ArrayList" %>
-<%@ page import= "dto.Book" %>
-<%@ page import = "dao.BookRepository" %>
 <%@ page import = "java.sql.*" %>
-<!DOCTYPE html><html><head><meta charset="UTF-8">
+<!DOCTYPE html><html><head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link href="./resources/css/bootstrap.min.css" rel="stylesheet"/><!-- cdn이 아닌 로컬에 저장된 css  -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
 
 
 <title>♡♥♡ 도서목록 ♡♥♡ </title></head>
@@ -45,8 +41,10 @@
 				<div class="col-md-4">
 					<div class="h-100 p-2">
 						
-
+							<img src="./resources/images/<%=rs.getString("b_filename")%>" style="width: 200px; height:300px" />	
+							<p></p>
 							<h5><b><%=rs.getString("b_name")%></b></h5>
+							
 							<p><%=rs.getString("b_author")%>
 							<br> <%=rs.getString("b_publisher")%> | <%=rs.getString("b_unitPrice")%>원
 							<p> <%=rs.getString("b_description").substring(0,60)%>....
