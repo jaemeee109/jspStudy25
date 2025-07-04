@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.empty-cart {
+    margin-top: 80px;  /* 상단 여백 */
+    margin-bottom: 80px;
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
+
+.cart-table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+}
+
+.cart-table th, .cart-table td {
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.cart-actions {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.cart-actions a {
+    margin: 0 20px;
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cart-actions a:hover {
+    background-color: #666;
+}
