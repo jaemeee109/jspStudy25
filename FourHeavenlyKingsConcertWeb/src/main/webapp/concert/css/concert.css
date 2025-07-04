@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+/* 1. 공연 목록 섹션과 상단 제목 사이 여백 */
+.container.py-4 {
+  margin-top: 40px;  /* 공연목록 전체 위 여백 */
+ 
+}
+
+.container.py-4.h3 {
+ color: #f36181;
+	
+}
+
+/* 3. 공연 카드들 간의 가로/세로 간격 조정 */
+.concert-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 40px; /* 행 간격 30px, 열 간격 40px */
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* 2. 각 공연 카드 자체의 위아래 여백 */
+.concert-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px 0; /* 위아래 여백 */
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #fafafa;
+  transition: box-shadow 0.2s;
+}
+
+.concert-item:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 공연 이미지 */
+.concert-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* 4. 글씨 크기 조정 */
+.concert-item h5 {
+  font-size: 14px;
+  margin: 10px 0 5px;
+}
+
+.concert-item p {
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+/* 가격만 강조하고 싶다면 따로 설정 가능 */
+.concert-item p.price {
+  font-weight: bold;
+  color: #444;
+}
+
+/* 5. 상세 정보 버튼 스타일 */
+.detail-btn {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  padding: 10px 0;
+  background-color: #f5a1bc;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+
+  /* 텍스트 세로 가운데 정렬을 위해 line-height 조정 */
+  line-height: 1.2; /* 기본값 보다 약간 키워서 텍스트 위치 조절 가능 */
+  
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  /* 아래 추가: flex로 세로 가운데 정렬 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-btn:hover {
+  background-color:#f36181;
+}
