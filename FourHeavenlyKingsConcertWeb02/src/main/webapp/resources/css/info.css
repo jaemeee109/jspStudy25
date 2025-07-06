@@ -1,85 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Lora&display=swap');
+/* 구글 웹폰트 적용 (Chiron Hei HK 사용) */
+@import url('https://fonts.googleapis.com/css2?family=Chiron+Hei+HK:ital,wght@0,200..900;1,200..900&display=swap');
 
-.container {
-    width: 950px;
-    margin: 0 auto;
-    font-family: "Lora", serif;
-    color: #333;
+body,
+.container,
+.concert-info-box,
+.concert-extra-info,
+h2, h4, p, span {
+  font-family: "Chiron Hei HK", sans-serif;
+  font-weight: 400;
 }
 
+/* 1. 공연 제목과 menu.jsp 사이, 그리고 제목과 콘텐츠 사이 여백 추가 */
+.container.py-4 > h2 {
+    font-size: 45px;
+    margin-top: 40px;    /* menu.jsp와 공연 제목 사이 */
+    margin-bottom: 40px; /* 공연 제목과 상세 정보 사이 */
+    text-shadow: 0 7px 6px rgb(192, 192, 192);
+    text-align: center;
+}
+
+/* 공연 상세 페이지의 전체 레이아웃 - 가로 배치, 간격 조정 */
 .concert-detail-row {
     display: flex;
-    gap: 30px;
+    gap: 50px; /* 이미지와 정보 사이 간격 */
     margin-bottom: 40px;
     align-items: flex-start;
 }
 
+/* 공연 이미지 박스 안의 이미지 스타일 */
 .concert-img-box img {
     width: 345px;
     height: 450px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 7px 6px rgba(0,0,0,0.1);
 }
 
+/* 공연 정보 박스 - 세로 정렬, 왼쪽 정렬 강제 */
 .concert-info-box {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    text-align: left;
 }
 
+/* 공연 정보 안의 일반 텍스트 스타일 */
 .concert-info-box p {
+    padding-top: 10px;
+    margin-top: 5px;
     margin-bottom: 15px;
+    margin-left: 0;
+    margin-right: 0;
     font-size: 16px;
     line-height: 1.5;
+    width: 100%;
+    text-align: left;
 }
 
+/* 공연 정보 안의 제목 텍스트 스타일 */
 .concert-info-box h4 {
+    margin-top: 30px;
     margin-bottom: 20px;
+    padding: 20px;
     color: #f36181;
     font-weight: 700;
     font-size: 24px;
 }
 
+/* 3. 버튼들을 감싸는 form에 flex 적용해서 가로 정렬 및 간격 */
+.concert-info-box form {
+    display: flex;
+    gap: 50px;
+    margin-top: 20px;
+    
+}
+
+/* 3. 버튼 공통 스타일: 동일 높이/너비, 중앙 정렬 */
+.concert-info-box form button.btn,
 .concert-info-box form a.btn {
-    display: inline-block;
-    margin-right: 15px;
-    padding: 10px 20px;
+    flex: 1;                  /* 균등 너비 분배 */
+    width: 250px;             /* 필요 시 고정 너비 */
+    height: 45px;             /* 동일 높이 */
+    display: flex;            /* 내부 텍스트 중앙 정렬을 위해 */
+    align-items: center;
+    justify-content: center;
     border-radius: 5px;
     text-decoration: none;
-    color: white;
-    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #f6d0dc; /* 기본 배경색 */
 }
 
-.concert-info-box a.btn-info {
-    background-color: #0dcaf0;
+/* 예매하기 버튼 색상 & hover */
+.concert-info-box form button.btn-info {
+    background-color: #f6d0dc;
+}
+.concert-info-box form button.btn-info:hover {
+    background-color: #f36181;
 }
 
-.concert-info-box a.btn-info:hover {
-    background-color: #31d2f2;
+/* 공연목록 버튼 색상 & hover */
+.concert-info-box form a.btn-secondary {
+    background-color: #f6d0dc;
+    color: white;
+}
+.concert-info-box form a.btn-secondary:hover {
+    background-color: #f36181;
 }
 
-.concert-info-box a.btn-warning {
-    background-color: #ffc107;
-    color: #000;
-}
-
-.concert-info-box a.btn-warning:hover {
-    background-color: #ffca2c;
-}
-
-.concert-info-box a.btn-secondary {
-    background-color: #6c757d;
-}
-
-.concert-info-box a.btn-secondary:hover {
-    background-color: #5a6268;
-}
-
-/* 아래 공연 상세 추가정보 가운데 정렬 */
+/* 공연 추가 정보 영역 - 가운데 정렬 */
 .concert-extra-info {
     text-align: center;
     font-size: 16px;
@@ -87,10 +121,12 @@
     line-height: 1.6;
 }
 
+/* 공연 추가 정보의 문단 간격 */
 .concert-extra-info p {
     margin: 8px 0;
 }
 
+/* 강조 텍스트 색상 변경 */
 .concert-extra-info b {
     color: #f36181;
 }

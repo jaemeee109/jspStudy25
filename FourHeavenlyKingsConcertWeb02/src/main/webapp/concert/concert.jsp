@@ -3,7 +3,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page errorPage="exceptionNoConcertId.jsp" %> 
-<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Lora&display=swap" rel="stylesheet">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+
+<!-- <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Lora&display=swap" rel="stylesheet"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chiron+Hei+HK:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
 <jsp:useBean id="concertDAO" class="dao.ConcertRepository" scope="session" />
 
@@ -13,8 +18,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/index.css" />
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/info.css" />
+
+<!-- JSTL 말고 JSP 기본 문법으로 contextPath 처리 -->
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/info.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/index.css">
+
+<%-- <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/index.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/info.css" /> --%>
 
 
 
@@ -76,7 +86,7 @@
 		 	
 		 	<!-- 오른쪽  -->
 		 	<div class="concert-info-box">
-		 	<p><%=concert.getC_description()%></p>
+		 	
 		 	<p><b>공연일</b> : <%=concert.getC_releaseDate()%></p>
 		 	
 		 	<p><b>공연번호 : </b><span class="badge text-bg-danger"> <%=concert.getC_Id()%></span>							
@@ -84,11 +94,12 @@
 				<p><b>공연사</b> : <%=concert.getC_publisher()%>						
 				<p><b>잔여좌석</b> : <%=concert.getC_unitsInStock()%>
 		 		<p><b>가격</b> : <%=concert.getC_unitPrice()%>원
+		 		<p><%=concert.getC_description()%></p>
 		 	<form name="addForm" action="../cartAddAction.do" method="post">
 			    <input type="hidden" name="id" value="${sessionScope.sessionId}"/>
 			    <input type="hidden" name="c_id" value="<%=concert.getC_Id()%>"/>
 			    <input type="hidden" name="count" value="1"/>
-			    <button type="submit" class="btn btn-info">예매하기 &raquo;</button>
+			    <button type="submit" class="btn btn-info">예매하기&raquo;</button>
 			    <a href="./concerts.jsp" class="btn btn-secondary">공연목록 &raquo;</a>
 			</form>
 

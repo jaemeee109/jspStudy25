@@ -9,6 +9,7 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <link rel="stylesheet" href="${ctx}/resources/css/cart.css" />
 <link rel="stylesheet" href="${ctx}/resources/css/index.css" />
+<link href="https://fonts.googleapis.com/css2?family=Chiron+Hei+HK:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
 </head>
 <body>

@@ -54,14 +54,12 @@ public class cartDAO {
 
 			ArrayList<cartDTO> list = new ArrayList<cartDTO>();
 
-			/* String sql = "SELECT * FROM cart Where id = ?"; */
 			
 			   String sql = "SELECT c.*, p.c_name, p.c_unitPrice, p.c_unitsInStock, p.c_releaseDate " +
 		                 "FROM cart c " +
 		                 "JOIN concert p ON c.c_id = p.c_id " +
 		                 "WHERE c.id = ?";
 			
-		
 			
 			try {
 				conn = DBConnection.getConnection();
@@ -79,8 +77,8 @@ public class cartDAO {
 				    cart.setC_id(rs.getString("c_id"));      // 공연 번호
 				    cart.setId(rs.getString("id"));          // 회원 ID
 
-				    // ✔️ 여기에 꼭 count를 세팅해 줍니다.
-				    cart.setCount(rs.getInt("count"));       // 장바구니 수량
+				   
+				    cart.setCount(rs.getInt("count"));       // 상품 수량
 
 				    concert.setC_name(rs.getString("c_name"));
 				    concert.setC_unitPrice(rs.getInt("c_unitPrice"));
@@ -89,8 +87,7 @@ public class cartDAO {
 
 				    cart.setConcert(concert);
 				    list.add(cart);
-				}
-//while종료
+				}//while종료
 				
 				
 			} catch (Exception ex) {
@@ -131,13 +128,7 @@ public class cartDAO {
 
 		 String name = null;
 		 // 로그인한 사용자의 이름을 담을 변수
-		 
-		 
-		//나중에 테이블 수정		 
-		//SELECT m.name 
-		//FROM cart c 
-		//JOIN member m ON c.id = m.id 
-		//WHERE c.id = ?
+	
 		 
 		 String sql = "SELECT m.name FROM cart c JOIN member m ON c.id = m.id WHERE c.id = ?";
 		 // cart의 id와 member의 name을 조인해서 가져옴

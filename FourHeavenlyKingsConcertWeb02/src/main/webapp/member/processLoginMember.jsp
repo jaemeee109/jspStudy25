@@ -30,7 +30,8 @@
 <c:choose>
     <c:when test="${not empty resultSet.rows}">
       
-        <c:redirect url="resultMember.jsp?msg=2" />
+        <c:redirect url="../main.jsp" />
+
     </c:when>
     <c:otherwise>
         <c:redirect url="loginMember.jsp?error=1" />

@@ -40,7 +40,7 @@ public class CartController extends HttpServlet {
 
         } else if (command.equals("/cartUpdateAction.do")) {
             requestUpdateCart(req);
-            // ← forward 삭제, 오직 redirect
+           
             resp.sendRedirect(ctx + "/cartListAction.do");
 
         } else if (command.equals("/cartDeleteAction.do")) {

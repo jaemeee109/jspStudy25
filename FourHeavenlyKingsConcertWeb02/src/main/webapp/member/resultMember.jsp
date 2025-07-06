@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/index.css" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
-    <title>회원 정보</title>
+     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/hello.css" />
+     <title>회원 정보</title>
 </head>
 <body>
 

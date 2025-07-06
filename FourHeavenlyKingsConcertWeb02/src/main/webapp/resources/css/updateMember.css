@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+
+
+/* 전체 폼 너비 */
+form {
+  width: 450px;
+ margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+
+h2.display-5.fw-bold {
+  margin-top: 30px;   
+  margin-bottom: 20px; 
+  font-size: 20px;    
+  font-weight: 400;  
+  line-height: 1.2;    /* 줄간격 조절 */
+}
+
+/* label과 input의 기본 행 스타일 */
+.mb-3 {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+/* label 고정 너비, 오른쪽 여백 */
+.mb-3 > label {
+  width: 120px;
+  /*font-weight: bold;*/
+ /* color:#f5a1bc ;*/
+  padding-right: 0px;
+  box-sizing: border-box;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* input, select 기본 스타일 */
+.mb-3 input[type="text"],
+.mb-3 input[type="password"],
+.mb-3 input[type="email"],
+.mb-3 select {
+  flex-grow: 1;       /* 가변 너비 유지 */
+  max-width: 250px;   /* 최대 너비 제한 */
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: left;   /* 입력 텍스트는 왼쪽 정렬 */
+}
+
+.mb-3 input[type="radio"]{
+	
+text-align: center;
+
+}
+
+/* 생년월일 3개 input 가로 정렬 */
+.birth-row {
+  display: flex;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.birth-row input {
+  width: 80px;
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* 이메일 가로 정렬 */
+.email-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-grow: 1;
+}
+
+.email-row input[type="text"] {
+  flex-grow: 1;
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.email-row select {
+  width: 140px;
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* @ 문자 스타일 */
+.email-row span {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* 버튼 가로 정렬, 왼쪽 정렬 */
+.btn-row {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+/* 버튼 기본 스타일 */
+.btn-row input[type="submit"],
+.btn-row a.btn {
+  padding: 10px 20px;
+  background-color: #f5a1bc;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-row a.btn {
+  background-color: #f5a1bc; /* 회원탈퇴 버튼 빨간색 */
+}
+
+.btn-row input[type="submit"]:hover,
+.btn-row a.btn:hover {
+  background-color: #f36181;
+}
+
