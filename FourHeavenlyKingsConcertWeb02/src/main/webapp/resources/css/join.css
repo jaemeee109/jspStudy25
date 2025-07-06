@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+/* 전체 폼 정렬 */
+form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* 레이블 스타일 */
+label {
+  font-weight: bold;
+  color: #f36181;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+/* 공통 입력 필드 스타일 */
+input.form-control,
+select.form-select {
+  border: transparent;  /* 테두리 연하게 변경 */
+  border-radius: 4px;
+  padding: 10px;
+  color: #333;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+  height: 38px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+input.form-control:hover,
+input.form-control:focus,
+select.form-select:hover,
+select.form-select:focus {
+  border-color: #f36181;
+  box-shadow: none;
+}
+
+
+
+/* 기본 row 정렬 */
+.mb-3.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* 라벨 고정 너비 */
+.mb-3.row > label {
+  width: 120px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+/* 입력 영역 컨테이너 */
+.mb-3.row > .col-sm-5,
+.mb-3.row > .col-sm-10 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* 생년월일, 이메일, 가입일 등 내부 row 정렬 */
+.mb-3 .row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+/* 내부 row 안의 col 설정 */
+.mb-3 .row .col-sm-2,
+.mb-3 .row .col-sm-3,
+.mb-3 .row .col-sm-4 {
+  flex: 1;
+  padding: 0;
+}
+
+/* 성별 라디오 버튼 정렬 */
+.mb-3.row:nth-of-type(5) > .col-sm-5 {
+  justify-content: center;
+  gap: 10px;
+}
+
+
+
+
+/* 라디오 버튼 간격 */
+input[type="radio"] {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* 이메일 @ 표시 간격 */
+.mb-3 .row span {
+  line-height: 38px;
+  margin: 0 8px;
+}
+
+/* 버튼 부모 박스 */
+.mb-3.row:last-of-type > .col-sm-10 {
+  display: flex !important;
+  justify-content: center !important; /* 왼쪽 정렬 */
+  align-items: center !important;
+  gap: 10px !important; /* 버튼 사이 간격 제거 */
+  margin-top: 60px;
+  margin-bottom: 0px;
+  /*padding-left: 120px !important;  라벨 공간 확보, 필요시 조정 */
+  text-align: left !important; /* 혹시 text-align:right 있으면 덮어쓰기 */
+}
+
+/* 버튼 스타일 */
+.mb-3.row:last-of-type > .col-sm-10 input[type="submit"],
+.mb-3.row:last-of-type > .col-sm-10 input[type="reset"] {
+  margin: 0 !important; /* 마진 전부 제거 */
+  padding: 6px 20px !important; /* 버튼 내부 여백 조절 */
+  width: auto !important; /* 버튼 너비 자동 */
+  min-width: 80px; /* 최소 너비 지정 (필요하면 조정) */
+  box-sizing: border-box !important;
+  display: inline-block !important; /* flex 아이템 정렬 보장 */
+}
+
+/* 버튼 hover 컬러 */
+.btn.btn-primary:hover {
+  background-color: #f5a1bc !important;
+  color: white !important;
+}
+
+/* 버튼 스타일 */
+.btn.btn-primary {
+  background-color: #f36181 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  width: auto;
+  height: auto;
+  font-size: 15px !important;
+  color: white !important;
+  cursor: pointer !important;
+  padding: 0;
+}
+
+
+
+
