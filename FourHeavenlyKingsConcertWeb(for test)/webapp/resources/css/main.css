@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+/* main 영역 좌우로 나누기 */
+#main-content {
+  display: flex;
+ gap: 30px;
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 왼쪽  */
+#left-column {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* 실시간 랭킹  */
+#ranking-box {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 랭킹 제목 */
+#ranking-box h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* 이미지 리스트만 flex 적용 */
+.rank-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+/* 랭킹 이미지 3개 */
+.rank-item {
+  flex: 1 1 calc(33.333% - 10px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.rank-item img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.rank-item .title {
+  margin-top: 8px;
+  font-size: 12px;
+ /* font-weight: bold;*/
+ 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 오른쪽  */
+#right-column {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+ 
+}
+
+/* 박스 스타일 */
+#notice-box,
+#md-pick-box {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  width: 100%;
+}
+
+/*  제목 */
+.box h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* 공지사항 리스트 */
+#notice-box ul {
+  padding-left: 20px;
+  margin: 0;
+  display: block !important; ;
+  flex-direction: column !important; 
+}
+
+#notice-box li {
+  font-size: 15px;
+  margin-bottom: 10px;
+  display: list-item !important; 
+  white-space: normal!important;
+  word-break: keep-all;
+  clear:both;
+ float: none !important;
+ text-align: left;
+}
+
+
+/* MD’s Pick  */
+#md-pick-box .md-grid {
+  display: flex;
+  flex-wrap: nowrap; /*줄바꿈안함*/
+  gap: 2px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+  
+}
+
+.md-item {
+  flex: 0 0 auto;
+}
+
+.md-item img {
+  width: 150px;
+  height:200px;
+  border-radius: 8px;
+  display: block;
+}
